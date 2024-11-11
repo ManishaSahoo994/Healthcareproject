@@ -1,20 +1,43 @@
 package com.example.health_care_project
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var edUsername: EditText
+    private lateinit var edPassword: EditText
+    private lateinit var btn: Button
+    private lateinit var tv: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        edUsername = findViewById(R.id.editTextLoginUsername)
+        edPassword = findViewById(R.id.editTextLoginPassword)
+        btn = findViewById(R.id.buttonLogin)
+        tv = findViewById(R.id.textViewNewUser)
+
+        btn.setOnClickListener {
+            val username = edUsername.text.toString()
+            val password = edPassword.text.toString()
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(applicationContext, "Please fill all details", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext, "Login Success", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        tv.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
     }
 }
