@@ -42,12 +42,16 @@ class RegisterActivity : AppCompatActivity() {
             val password = edPassword.text.toString()
             val confirm = edConfirm.text.toString()
 
+            val db = Database(applicationContext, "healthcare", null, 1)
+
 
             if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
                 Toast.makeText(applicationContext, "Please fill all details", Toast.LENGTH_SHORT).show()
             } else {
                 if (password == confirm) {
                     if (isValid(password)) {
+                        db.register(username,email,password);
+
                         Toast.makeText(applicationContext, "Record Inserted", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                     } else {
