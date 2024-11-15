@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".BookApointmentActivity">
 
     <EditText
@@ -124,7 +125,8 @@
         android:layout_height="52dp"
         android:text="Back"
         tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="675dp" />
+        tools:layout_editor_absoluteY="675dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
@@ -134,7 +136,8 @@
         android:text="Select Date"
         android:textColor="@color/yellowLight"
         app:layout_constraintTop_toBottomOf="@+id/editTextAppContactNumber"
-        tools:layout_editor_absoluteX="76dp" />
+        tools:layout_editor_absoluteX="76dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAppDate"
@@ -145,6 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
         tools:layout_editor_absoluteY="525dp" />
 
     <TextView
