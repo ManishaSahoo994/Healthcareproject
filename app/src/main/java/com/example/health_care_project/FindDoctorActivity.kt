@@ -13,7 +13,7 @@ class FindDoctorActivity : AppCompatActivity() {
 
         val exit: CardView = findViewById(R.id.cardFDBack)
         exit.setOnClickListener {
-            startActivity(Intent(this@FindDoctorActivity, HomeActivity::class.java))
+            startActivity(Intent(this@FindDoctorActivity, homeActivity::class.java))
         }
 
         val familyPhysician: CardView = findViewById(R.id.cardFDFamilyPhysican)
@@ -23,10 +23,10 @@ class FindDoctorActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val dietician: CardView = findViewById(R.id.cardFDDitician)
-        dietician.setOnClickListener {
+        val ditician: CardView = findViewById(R.id.cardFDDitician)
+        ditician.setOnClickListener {
             val intent = Intent(this@FindDoctorActivity, DoctorDetailsActivity::class.java)
-            intent.putExtra("title", "Dietician")
+            intent.putExtra("title", "Ditician")
             startActivity(intent)
         }
 

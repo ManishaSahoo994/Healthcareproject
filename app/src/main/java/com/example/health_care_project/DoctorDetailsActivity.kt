@@ -2,6 +2,7 @@ package com.example.health_care_project
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.AdapterView
 import android.widget.Button
 import android.widget.ListView
 import android.widget.SimpleAdapter
@@ -62,7 +63,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
 
         doctorDetails = when (title) {
             "family physicians" -> doctorDetails1
-            "Dieticians" -> doctorDetails2
+            "Diticians" -> doctorDetails2
             "Details" -> doctorDetails3
             "surgen" -> doctorDetails4
             else -> doctorDetails5
@@ -70,6 +71,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
             startActivity(Intent(this@DoctorDetailsActivity, FindDoctorActivity::class.java))
+
         }
 
         val list = ArrayList<HashMap<String, String>>()
@@ -93,5 +95,17 @@ class DoctorDetailsActivity : AppCompatActivity() {
 
         val listView: ListView = findViewById(R.id.ListviewDD)
         listView.adapter = sa
+
+        listView.setOnItemClickListener { adapterView, view, i, l ->
+            val intent = Intent(this@DoctorDetailsActivity, BookAppointmentActivity::class.java)
+            intent.putExtra("text1", title)
+            intent.putExtra("text2", doctorDetails[i][0])
+            intent.putExtra("text3", doctorDetails[i][1])
+            intent.putExtra("text4", doctorDetails[i][3])
+            intent.putExtra("text5", doctorDetails[i][4])
+            startActivity(intent)
+        }
+
+
     }
 }

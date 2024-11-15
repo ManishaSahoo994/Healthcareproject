@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 
-class HomeActivity : AppCompatActivity() {
+class homeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,12 +23,12 @@ class HomeActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.clear()
             editor.apply()
-            startActivity(Intent(this@HomeActivity, LoginActivity::class.java))
+            startActivity(Intent(this@homeActivity, LoginActivity::class.java))
         }
 
         val findDoctor: CardView = findViewById(R.id.cardFindDoctor)
         findDoctor.setOnClickListener {
-            startActivity(Intent(this@HomeActivity, FindDoctorActivity::class.java))
+            startActivity(Intent(this@homeActivity, FindDoctorActivity::class.java))
         }
 
     }

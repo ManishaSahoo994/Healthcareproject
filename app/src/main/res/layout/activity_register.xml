@@ -33,7 +33,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextRegEmail"
+        android:id="@+id/editTextAppAddress"
         android:layout_width="296dp"
         android:layout_height="42dp"
         android:layout_marginTop="28dp"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAppAddress"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -93,7 +93,7 @@
         app:layout_constraintVertical_bias="0.097" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registration"
@@ -126,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAppTitle"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button

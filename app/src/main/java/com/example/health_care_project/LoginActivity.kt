@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         tv = findViewById(R.id.textViewNewUser)
 
         btn.setOnClickListener {
+
             val username = edUsername.text.toString()
             val password = edPassword.text.toString()
             val db = Database(applicationContext, "healthcare", null, 1)
@@ -42,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                     editor.putString("username", username)
                     editor.apply()
 
-                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, homeActivity::class.java))
                 }else{
                     Toast.makeText(applicationContext, "Invalid Username and Password", Toast.LENGTH_SHORT).show()
 
