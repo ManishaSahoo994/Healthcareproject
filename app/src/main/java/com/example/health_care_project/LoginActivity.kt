@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         tv = findViewById(R.id.textViewNewUser)
 
         btn.setOnClickListener {
+
             val username = edUsername.text.toString()
             val password = edPassword.text.toString()
             val db = Database(applicationContext, "healthcare", null, 1)

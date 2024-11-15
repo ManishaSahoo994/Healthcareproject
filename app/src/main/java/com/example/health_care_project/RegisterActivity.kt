@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
 
         edUsername = findViewById(R.id.editTextAppFullName)
         edPassword = findViewById(R.id.editTextAppContactNumber)
-        edEmail = findViewById(R.id.editTextRegEmail)
+        edEmail = findViewById(R.id.editTextAppAddress)
         edConfirm = findViewById(R.id.editTextAppFees)
         btn = findViewById(R.id.buttonBOOKAppointment)
         tv = findViewById(R.id.textViewExistingUser)
