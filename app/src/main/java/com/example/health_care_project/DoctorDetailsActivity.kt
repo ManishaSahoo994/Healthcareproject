@@ -47,7 +47,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
         }
 
         btn.setOnClickListener {
-            startActivity(Intent(this, FindDoctorActivity::class.java))
+            startActivity(Intent(this@DoctorDetailsActivity, FindDoctorActivity::class.java))
         }
 
         val list = ArrayList<HashMap<String, String>>()
@@ -73,7 +73,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
         listView.adapter = sa
 
         listView.setOnItemClickListener { _, _, i, _ ->
-            val intent = Intent(this, BookAppointmentActivity::class.java).apply {
+            val intent = Intent(this@DoctorDetailsActivity, BookAppointmentActivity::class.java).apply {
                 putExtra("text1", title)
                 putExtra("text2", doctorDetails[i][0])
                 putExtra("text3", doctorDetails[i][1])
