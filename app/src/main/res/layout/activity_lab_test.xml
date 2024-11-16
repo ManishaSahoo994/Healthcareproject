@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back2"
     tools:context=".LabTestActivity">
+
     <TextView
         android:id="@+id/textViewDDName"
         android:layout_width="wrap_content"
@@ -19,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.077" />
 
     <TextView
         android:id="@+id/DDTittle"
@@ -37,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDDName"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ListView
         android:id="@+id/ListviewDD"
@@ -49,8 +50,10 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DDTittle"
+        app:layout_constraintVertical_bias="0.367"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -75,14 +78,16 @@
         android:inputType="text"
         android:text="Lab Test and Packages"
         android:textColor="@color/yellowLight"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="156dp" />
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="136dp" />
 
     <Button
         android:id="@+id/buttonLTGoCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go To Cart"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="700dp" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="681dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
