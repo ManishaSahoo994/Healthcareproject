@@ -17,10 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".BookAppointmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BookApointmentActivity"
-            android:exported="false" /> <!-- Other activity declarations -->
+            android:exported="true" />
+
         <activity
             android:name=".FindDoctorActivity"
             android:exported="false" />

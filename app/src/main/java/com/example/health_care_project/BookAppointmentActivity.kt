@@ -9,9 +9,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class BookAppointmentActivity : AppCompatActivity() {
 
@@ -33,12 +32,7 @@ class BookAppointmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_appointment)
 
-        // Set edge-to-edge content
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.buttonAppBack)) { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
 
         // Initialize views
         tv = findViewById(R.id.textViewAppTitle)
@@ -86,8 +80,9 @@ class BookAppointmentActivity : AppCompatActivity() {
         }
 
         buttonAppBack.setOnClickListener {
-            startActivity(Intent(this, FindDoctorActivity::class.java))
+            startActivity(Intent(this@BookAppointmentActivity, FindDoctorActivity::class.java))
         }
+
 
         buttonAppBook.setOnClickListener {
             // Add your booking logic here

@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class DoctorDetailsActivity : AppCompatActivity() {
@@ -79,6 +80,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
                 putExtra("text4", doctorDetails[i][3])
                 putExtra("text5", doctorDetails[i][4])
             }
+
             startActivity(intent)
         }
     }
