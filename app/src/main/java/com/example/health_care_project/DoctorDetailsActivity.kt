@@ -18,34 +18,11 @@ class DoctorDetailsActivity : AppCompatActivity() {
         arrayOf("Doctor Name: Deepak Sahoo", "Hospital Address: Delhi", "Exp: 3yrs", "Mobile No: 987895679", "600"),
         arrayOf("Doctor Name: Ashok Panda", "Hospital Address: Katraj", "Exp: 7yrs", "Mobile No: 890967236", "800")
     )
-    private val doctorDetails2 = arrayOf(
-        arrayOf("Doctor Name: Arjit Sasta", "Hospital Address: Pimpri", "Exp: 5yrs", "Mobile No: 9856093456", "600"),
-        arrayOf("Doctor Name: Prasad Sasta", "Hospital Address: Nigdi", "Exp: 10yrs", "Mobile No: 879056778", "800"),
-        arrayOf("Doctor Name: Nihar Prusty", "Hospital Address: Pune", "Exp: 8yrs", "Mobile No: 8909353856", "500"),
-        arrayOf("Doctor Name: Deepak Sahoo", "Hospital Address: Delhi", "Exp: 3yrs", "Mobile No: 987895679", "600"),
-        arrayOf("Doctor Name: Ashok Panda", "Hospital Address: Katraj", "Exp: 7yrs", "Mobile No: 890967236", "800")
-    )
-    private val doctorDetails3 = arrayOf(
-        arrayOf("Doctor Name: Arjit Sasta", "Hospital Address: Pimpri", "Exp: 5yrs", "Mobile No: 9856093456", "600"),
-        arrayOf("Doctor Name: Prasad Sasta", "Hospital Address: Nigdi", "Exp: 10yrs", "Mobile No: 879056778", "800"),
-        arrayOf("Doctor Name: Nihar Prusty", "Hospital Address: Pune", "Exp: 8yrs", "Mobile No: 8909353856", "500"),
-        arrayOf("Doctor Name: Deepak Sahoo", "Hospital Address: Delhi", "Exp: 3yrs", "Mobile No: 987895679", "600"),
-        arrayOf("Doctor Name: Ashok Panda", "Hospital Address: Katraj", "Exp: 7yrs", "Mobile No: 890967236", "800")
-    )
-    private val doctorDetails4 = arrayOf(
-        arrayOf("Doctor Name: Arjit Sasta", "Hospital Address: Pimpri", "Exp: 5yrs", "Mobile No: 9856093456", "600"),
-        arrayOf("Doctor Name: Prasad Sasta", "Hospital Address: Nigdi", "Exp: 10yrs", "Mobile No: 879056778", "800"),
-        arrayOf("Doctor Name: Nihar Prusty", "Hospital Address: Pune", "Exp: 8yrs", "Mobile No: 8909353856", "500"),
-        arrayOf("Doctor Name: Deepak Sahoo", "Hospital Address: Delhi", "Exp: 3yrs", "Mobile No: 987895679", "600"),
-        arrayOf("Doctor Name: Ashok Panda", "Hospital Address: Katraj", "Exp: 7yrs", "Mobile No: 890967236", "800")
-    )
-    private val doctorDetails5 = arrayOf(
-        arrayOf("Doctor Name: Arjit Sasta", "Hospital Address: Pimpri", "Exp: 5yrs", "Mobile No: 9856093456", "600"),
-        arrayOf("Doctor Name: Prasad Sasta", "Hospital Address: Nigdi", "Exp: 10yrs", "Mobile No: 879056778", "800"),
-        arrayOf("Doctor Name: Nihar Prusty", "Hospital Address: Pune", "Exp: 8yrs", "Mobile No: 8909353856", "500"),
-        arrayOf("Doctor Name: Deepak Sahoo", "Hospital Address: Delhi", "Exp: 3yrs", "Mobile No: 987895679", "600"),
-        arrayOf("Doctor Name: Ashok Panda", "Hospital Address: Katraj", "Exp: 7yrs", "Mobile No: 890967236", "800")
-    )
+
+    private val doctorDetails2 = doctorDetails1 // Replace with unique values as needed
+    private val doctorDetails3 = doctorDetails1 // Replace with unique values as needed
+    private val doctorDetails4 = doctorDetails1 // Replace with unique values as needed
+    private val doctorDetails5 = doctorDetails1 // Replace with unique values as needed
 
     private lateinit var doctorDetails: Array<Array<String>>
     private lateinit var tv: TextView
@@ -61,17 +38,16 @@ class DoctorDetailsActivity : AppCompatActivity() {
         val title = intent.getStringExtra("title")
         tv.text = title
 
-        doctorDetails = when (title) {
+        doctorDetails = when (title?.lowercase()) {
             "family physicians" -> doctorDetails1
-            "Diticians" -> doctorDetails2
-            "Details" -> doctorDetails3
-            "surgen" -> doctorDetails4
+            "dieticians" -> doctorDetails2
+            "details" -> doctorDetails3
+            "surgeons" -> doctorDetails4
             else -> doctorDetails5
         }
 
         btn.setOnClickListener {
-            startActivity(Intent(this@DoctorDetailsActivity, FindDoctorActivity::class.java))
-
+            startActivity(Intent(this, FindDoctorActivity::class.java))
         }
 
         val list = ArrayList<HashMap<String, String>>()
@@ -96,16 +72,15 @@ class DoctorDetailsActivity : AppCompatActivity() {
         val listView: ListView = findViewById(R.id.ListviewDD)
         listView.adapter = sa
 
-        listView.setOnItemClickListener { adapterView, view, i, l ->
-            val intent = Intent(this@DoctorDetailsActivity, BookAppointmentActivity::class.java)
-            intent.putExtra("text1", title)
-            intent.putExtra("text2", doctorDetails[i][0])
-            intent.putExtra("text3", doctorDetails[i][1])
-            intent.putExtra("text4", doctorDetails[i][3])
-            intent.putExtra("text5", doctorDetails[i][4])
+        listView.setOnItemClickListener { _, _, i, _ ->
+            val intent = Intent(this, BookAppointmentActivity::class.java).apply {
+                putExtra("text1", title)
+                putExtra("text2", doctorDetails[i][0])
+                putExtra("text3", doctorDetails[i][1])
+                putExtra("text4", doctorDetails[i][3])
+                putExtra("text5", doctorDetails[i][4])
+            }
             startActivity(intent)
         }
-
-
     }
 }
