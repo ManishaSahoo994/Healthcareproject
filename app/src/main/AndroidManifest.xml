@@ -13,14 +13,19 @@
         android:theme="@style/Theme.Health_care_project"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".LabTestDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".BookAppointmentActivity"
+=======
+            android:name=".LabTestActivity"
+>>>>>>> 43adcd9f31b8892f22a399ea622ea956abd13ab5
             android:exported="false" />
         <activity
-            android:name=".BookApointmentActivity"
-            android:exported="false" /> <!-- Other activity declarations -->
+            android:name=".BookAppointmentActivity"
+            android:exported="true" />
+
         <activity
             android:name=".FindDoctorActivity"
             android:exported="false" />

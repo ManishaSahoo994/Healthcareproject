@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/buttonAppBack"
+    android:id="@+id/BOOKAppointment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -10,12 +10,12 @@
 
 
     <Button
-        android:id="@+id/buttonAppresister"
+        android:id="@+id/ButtonAppBook"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginTop="168dp"
         android:background="@drawable/btn_bg"
-        android:text="REGISTER"
+        android:text="BOOK APPOINTMENT"
         android:textColorLink="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
@@ -32,7 +32,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Fees"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -55,7 +55,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -144,7 +144,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/buttonBOOKAppointment"
+        android:id="@+id/ButtonAppBack"
         android:layout_width="292dp"
         android:layout_height="48dp"
         android:layout_marginTop="228dp"
@@ -183,7 +183,7 @@
         tools:ignore="DuplicateIds,MissingConstraints" />
 
     <Button
-        android:id="@+id/ButtonAppTime"
+        android:id="@+id/ButtonAppDate"
         style="?android:spinnerStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

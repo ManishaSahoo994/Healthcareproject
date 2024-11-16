@@ -2,11 +2,11 @@ package com.example.health_care_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView
 import android.widget.Button
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class DoctorDetailsActivity : AppCompatActivity() {
@@ -33,7 +33,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_doctor_details)
 
         tv = findViewById(R.id.DDTittle)
-        btn = findViewById(R.id.buttonDDBack)
+        btn = findViewById(R.id.buttonLTBack)
 
         val title = intent.getStringExtra("title")
         tv.text = title
@@ -80,6 +80,7 @@ class DoctorDetailsActivity : AppCompatActivity() {
                 putExtra("text4", doctorDetails[i][3])
                 putExtra("text5", doctorDetails[i][4])
             }
+
             startActivity(intent)
         }
     }
