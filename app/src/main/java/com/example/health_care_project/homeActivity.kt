@@ -1,5 +1,6 @@
 package com.example.health_care_project
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -10,6 +11,7 @@ import androidx.cardview.widget.CardView
 
 class homeActivity : AppCompatActivity() {
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -30,6 +32,12 @@ class homeActivity : AppCompatActivity() {
         findDoctor.setOnClickListener {
             startActivity(Intent(this@homeActivity, FindDoctorActivity::class.java))
         }
+        val LabTest: CardView = findViewById(R.id.cardLabTest)
+            LabTest.setOnClickListener {
+            startActivity(Intent(this@homeActivity, LabTestActivity::class.java))
+        }
+
+
 
     }
 }

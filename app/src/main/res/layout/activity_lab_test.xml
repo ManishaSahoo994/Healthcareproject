@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ListView
-        android:id="@+id/ListviewDD"
+        android:id="@+id/listviewLT"
         android:layout_width="350dp"
         android:layout_height="500dp"
         android:layout_margin="10dp"
@@ -78,12 +78,12 @@
         android:inputType="text"
         android:text="Lab Test and Packages"
         android:textColor="@color/yellowLight"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:ignore="DuplicateIds,MissingConstraints,TouchTargetSizeCheck"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="136dp" />
 
     <Button
-        android:id="@+id/buttonLTGoCart"
+        android:id="@+id/buttonLTGoToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go To Cart"
